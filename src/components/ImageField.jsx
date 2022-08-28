@@ -39,7 +39,9 @@ const ImageField = () => {
         accept="image/*"
         hidden
       />
-      <button className="button">Downlod Image</button>
+      <button className={`button ${!imageFile ? "disabled" : ""}`}>
+        Downlod Image
+      </button>
     </div>
   );
 };

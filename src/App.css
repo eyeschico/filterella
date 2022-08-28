@@ -43,6 +43,13 @@ h1 {
   transition: 0.5s;
 }
 
+.button.disabled {
+  background-color: #ddd;
+  border: 1px #c7c7c7 solid;
+  color: #8c8c8c;
+  pointer-events: none;
+}
+
 .button:hover {
   background: -webkit-linear-gradient(140deg, #ff3162, #ff5c00);
   color: white;

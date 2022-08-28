@@ -1,9 +1,6 @@
-import React from "react";
-import "./Header.css";
-
 const Header = () => {
   return (
-    <div className="header">
+    <div className="partials">
       <h1>Filterella</h1>
     </div>
   );

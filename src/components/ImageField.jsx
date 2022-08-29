@@ -21,6 +21,7 @@ const ImageField = () => {
     width: "100%",
     height: "100%",
     objectFit: "contain",
+    boxShadow: "0px 0px 10px #000000",
   };
 
   return (
@@ -29,7 +30,9 @@ const ImageField = () => {
         {imageFile ? (
           renderImage()
         ) : (
-          <img src="./download-icon.svg" alt="Download Image" />
+          <div className="circle">
+            <img src="./download-icon.svg" alt="Download Image" />
+          </div>
         )}
       </div>
       <input

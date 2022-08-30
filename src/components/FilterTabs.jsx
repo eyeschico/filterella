@@ -1,7 +1,8 @@
 import "./FilterTabs.css";
 import { Tab, Tabs } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { makeStyles } from "@mui/styles";
+import { FilterContext } from "../App";
 
 const useStyles = makeStyles({
   tabs: {
@@ -15,7 +16,7 @@ const useStyles = makeStyles({
 });
 
 const FilterTabs = () => {
-  const [tabFilter, setTabFilter] = useState("instaFilter");
+  const { tabFilter, setTabFilter } = useContext(FilterContext);
 
   const handleChange = (event, newValue) => {
     setTabFilter(newValue);
@@ -32,7 +33,7 @@ const FilterTabs = () => {
         className={classes.tabs}
       >
         <Tab value="instaFilter" label="Instagram Filter" />
-        {/* <Tab value="customFilter" label="Custom Filter" /> */}
+        <Tab value="customFilter" label="Custom Filter" />
       </Tabs>
     </div>
   );

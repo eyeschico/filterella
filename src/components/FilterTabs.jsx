@@ -16,10 +16,13 @@ const useStyles = makeStyles({
 });
 
 const FilterTabs = () => {
-  const { tabFilter, setTabFilter } = useContext(FilterContext);
+  const { tabFilter, setTabFilter, setFilterClass } = useContext(FilterContext);
 
   const handleChange = (event, newValue) => {
     setTabFilter(newValue);
+    if (newValue === "customFilter") {
+      setFilterClass("");
+    }
   };
 
   const classes = useStyles();

@@ -1,9 +1,15 @@
 import { Box, Slider } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { FilterContext } from "../App";
 
 const SliderField = ({ slide }) => {
-  const [value, setValue] = useState(slide.defaultValue);
   const { label, defaultValue, field } = slide;
+  const [value, setValue] = useState(defaultValue);
+  const { customFilter, setCustomFilter } = useContext(FilterContext);
+
+  useEffect(() => {
+    setCustomFilter({ ...customFilter, [field]: value });
+  }, [value]);
 
   const handleSliderValue = (e) => setValue(e.target.value);
 
